@@ -1,0 +1,61 @@
+﻿# ════════════════════════════════════════════════════════════════
+#  开源仓库 .gitignore
+#  原则：凭证、登录态、本机环境、构建产物、本地笔记 —— 一律不入库
+# ════════════════════════════════════════════════════════════════
+
+# ── 签名与密钥（最高优先级：泄露 = 别人能签出与你同签名的 APK）──
+keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+*.bks
+
+# ── 登录态 / 会话 / 抓包 ──
+session.json
+cookies*.json
+*.har
+*.pcap
+
+# ── 本机环境 ──
+local.properties
+.gradle/
+build/
+*/build/
+
+# ── 构建产物 ──
+dist/
+*.apk
+*.aab
+*.ap_
+*.log
+__pycache__/
+
+# ── IDE ──
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ── 本地临时物：备份、一次性脚本、审查报告、逆向笔记 ──
+_backup_*/
+_gen_res.py
+OPENSOURCE_AUDIT.md
+gradle.local.sh
+
+# ── 反向保险：万一把仓库根指到了上层工具目录 ──
+browser_profile/
+wxapp/
+frida/
+jsdump/
+pending_*.txt
+pending_*.csv
+api_catalog_*.txt
+all_cainiao_apis.txt
+sniffed_apis.json
+
+# ── 工具生成的临时目录（不入库）──
+artifacts/

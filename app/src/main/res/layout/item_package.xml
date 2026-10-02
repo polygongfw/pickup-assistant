@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  分组容器内的一行（**不是**独立卡片 —— 卡片由「组头 + N 行 + 组尾」拼出来）。
+
+  背景不在这里写死：由 PkgAdapter 按位置给 bg_group_row（中间行）/ bg_group_row_last（末行）。
+  分隔线左边距 70dp = 14(行内边距) + 46(缩略图) + 10(间距)，让线从文字左边缘起，缩略图不被划断。
+
+  三种分组共用这一个布局，靠可见性切换出各自的「3 行」形态（见 PkgAdapter.bind）：
+    到站     L1 包裹名            ⊕领取件码（22sp 大字橙）  L2 快递·来源·单号
+    运输中   L1 运输中 + 时效      L2 来源|商品名            L3 快递·最新轨迹
+    近日签收 L1 已签收 09-30 21:38 L2 包裹名                L3 快递·最新轨迹
+  —— 状态词只出现一次（旧版有角标「在途」+ 状态大字 + 时效药丸三处重复）。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_group_row"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp">
+
+        <FrameLayout
+            android:layout_width="46dp"
+            android:layout_height="46dp">
+
+            <ImageView
+                android:id="@+id/ivGoods"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/bg_thumb"
+                android:contentDescription="包裹图片"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvGoodsBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/bg_badge_count"
+                android:paddingStart="4dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="1dp"
+                android:textColor="@color/surface"
+                android:textSize="10sp"
+                android:visibility="gone"
+                tools:text="3件"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- L1：[状态词] 包裹名 / 商品名        [时效] [滞留] -->
+            <LinearLayout
+                android:id="@+id/rowL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:textColor="@color/text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="运输中"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="手机尾号8888的包裹" />
+
+                <TextView
+                    android:id="@+id/tvEta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:maxLines="1"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    tools:text="90%概率10.5送达"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvDwell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_pill_warn"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/warn"
+                    android:textSize="11sp"
+                    android:visibility="gone"
+                    tools:text="滞留 3 天"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_pill_info"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="7dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="7dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/info"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    tools:text="家人的号"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <!-- 取件码行：只有「到站」分组有。大号橙字是这一页存在的理由，务必保留。 -->
+            <LinearLayout
+                android:id="@+id/rowCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCodeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取件码"
+                    android:textColor="@color/text_muted"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:letterSpacing="0.06"
+                    android:textColor="@color/brand_dark"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:text="U-9-12345" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCodeHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="这件需要短信验证后才能查取件码，去菜鸟 App 里看一眼"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- L2：来源|商品名（运输中）/ 快递·来源·单号（到站）/ 包裹名（已签收） -->
+            <TextView
+                android:id="@+id/tvLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_sub"
+                android:textSize="13sp"
+                tools:text="淘宝 | 儿童拇指发圈高弹力" />
+
+            <!-- L3：快递 · 最新轨迹 -->
+            <TextView
+                android:id="@+id/tvLine3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                tools:text="邮政快递 · 快件到达【三门峡市城区集散点】" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="70dp"
+        android:background="@color/divider" />
+</LinearLayout>

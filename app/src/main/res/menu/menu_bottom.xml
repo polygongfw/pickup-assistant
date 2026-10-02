@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_pickup"
+        android:icon="@drawable/ic_box"
+        android:title="@string/tab_pickup" />
+    <item
+        android:id="@+id/tab_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/tab_search" />
+    <item
+        android:id="@+id/tab_mine"
+        android:icon="@drawable/ic_person"
+        android:title="@string/tab_mine" />
+</menu>

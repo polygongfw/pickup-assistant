@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 选中的状态筛选 chip：深色实心 + 白字，和未选中的浅色 chip 拉出最大对比。 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/text" />
+    <corners android:radius="999dp" />
+</shape>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 组内最后一行，且组后没有操作栏时用它收底（下面两个角做圆）。 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/surface" />
+    <corners
+        android:bottomLeftRadius="14dp"
+        android:bottomRightRadius="14dp" />
+</shape>

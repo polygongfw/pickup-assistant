@@ -1,0 +1,12 @@
+# 个人本机配置示例。复制成 gradle.local.sh 后按自己的环境改。
+# gradle.local.sh 已在 .gitignore 里，不会被提交。
+#
+# 三个变量都是可选的：只设你环境里自动探测不出来的那些。
+#   JAVA_HOME        JDK 17+ 根目录（不设则从 PATH 上的 java 推断）
+#   ANDROID_HOME     Android SDK 根目录（不设则读 local.properties 的 sdk.dir）
+#   GRADLE_LAUNCHER  gradle 发行包里的 lib/gradle-launcher-<版本>.jar
+#                    （不设则用 PATH 上的 gradle 命令）
+
+# JAVA_HOME="<你的 JDK 根目录>"
+# ANDROID_HOME="<你的 Android SDK 根目录>"
+# GRADLE_LAUNCHER="<你的 gradle 发行包>/lib/gradle-launcher-<版本>.jar"

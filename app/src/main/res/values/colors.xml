@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand">#FF8A00</color>
+    <color name="brand_dark">#D96F00</color>
+    <color name="brand_deep">#B25A00</color>
+    <color name="brand_soft">#FFF4E5</color>
+
+    <color name="bg">#F4F5F7</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_alt">#FAFBFC</color>
+
+    <color name="text">#1A1D24</color>
+    <color name="text_sub">#5F6779</color>
+    <color name="text_muted">#98A0B0</color>
+    <color name="divider">#EBEEF3</color>
+
+    <color name="ok">#12A150</color>
+    <color name="ok_soft">#E7F7EE</color>
+    <color name="warn">#E08700</color>
+    <color name="warn_soft">#FFF4E0</color>
+    <color name="danger">#DC3545</color>
+    <color name="danger_soft">#FDECEE</color>
+    <color name="info_soft">#EEF3FF</color>
+    <color name="info">#3B6FE0</color>
+
+    <color name="code_bg">#14171D</color>
+    <color name="code_panel">#20242E</color>
+    <color name="code_text">#FFC46B</color>
+
+    <!--
+      分组身份色不再给卡片换底色（三组卡片变三种颜色反而更花、更碎，
+      而且分组边界依然看不出来）。改为：分组 = 一张白卡容器，
+      身份只落在「组头的圆点图标」上 —— 到站=橙（要行动）、运输中=蓝（在等）、
+      近日签收=灰（已完结）。复用 brand / info / text_muted 三套，不再单列颜色。
+    -->
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 分组的操作栏（组级动作 / 展开收起），负责给整张卡收底。 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/surface" />
+    <corners
+        android:bottomLeftRadius="14dp"
+        android:bottomRightRadius="14dp" />
+</shape>

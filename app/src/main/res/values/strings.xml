@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">取件助手</string>
+    <string name="tab_pickup">待取件</string>
+    <string name="tab_search">查快递</string>
+    <string name="tab_mine">我的</string>
+
+    <string name="state_loading">正在同步…</string>
+    <string name="state_empty_title">暂无待取包裹</string>
+    <string name="state_empty_desc">驿站没有你名下的未取包裹</string>
+    <string name="state_error_title">同步失败</string>
+    <string name="action_retry">重试</string>
+    <string name="action_login">去登录淘宝账号</string>
+    <string name="action_relogin">重新登录</string>
+    <string name="action_add_account">添加账号</string>
+    <string name="action_verify">验证登录态</string>
+    <string name="action_import">粘贴文本导入</string>
+    <string name="action_copy">复制取件码</string>
+    <string name="action_sync">立即同步</string>
+
+    <string name="code_screen_hint">屏幕已调至最亮，请把这一屏给驿站工作人员看</string>
+    <string name="code_need_sms">这件需要短信验证后才能查看取件码</string>
+
+    <string name="search_hint">输入运单号，如 7812345678901</string>
+    <string name="search_btn">查询</string>
+    <string name="search_empty">输入运单号开始查询。此功能不需要登录。</string>
+    <string name="search_no_node">该单号暂无轨迹，可能还没揽收</string>
+
+    <string name="notify_title">取件提醒</string>
+    <string name="notify_desc">每天 11:30 与 19:30 自动检查，有新品或滞留件时通知你</string>
+
+    <string name="compliance_note">本应用仅查询你自己账号下的包裹，数据不经过任何第三方服务器，请勿用于代替官方渠道。</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 件数角标底：官方 packageDataItem2PackageImageDescLabel 用的是 0xb0000000（70% 黑） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#B0000000" />
+    <corners android:radius="8dp" />
+</shape>
