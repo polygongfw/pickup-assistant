@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CainiaoPickup"
+        android:theme="@style/Theme.PickupAssistant"
         android:usesCleartextTraffic="false">
 
         <activity
@@ -37,7 +37,7 @@
             android:exported="false"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.CainiaoPickup.Code" />
+            android:theme="@style/Theme.PickupAssistant.Code" />
 
         <activity
             android:name=".ui.LoginActivity"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.CainiaoPickup" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.PickupAssistant" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/brand</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorPrimaryContainer">@color/brand_soft</item>
@@ -23,7 +23,7 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 
-    <style name="Theme.CainiaoPickup.Code" parent="Theme.CainiaoPickup">
+    <style name="Theme.PickupAssistant.Code" parent="Theme.PickupAssistant">
         <item name="android:statusBarColor">@color/code_bg</item>
         <item name="android:navigationBarColor">@color/code_bg</item>
         <item name="android:windowLightStatusBar">false</item>
@@ -31,12 +31,12 @@
         <item name="android:colorBackground">@color/code_bg</item>
     </style>
 
-    <style name="TextAppearance.Cainiao.Title" parent="TextAppearance.Material3.TitleLarge">
+    <style name="TextAppearance.PickupAssistant.Title" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textColor">@color/text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextAppearance.Cainiao.Section" parent="TextAppearance.Material3.TitleSmall">
+    <style name="TextAppearance.PickupAssistant.Section" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textColor">@color/text_sub</item>
         <item name="android:letterSpacing">0.02</item>
     </style>
@@ -44,10 +44,10 @@
     <!--
       状态筛选 chip：选中/未选中由代码换 background + textColor。
       ⚠ `parent=""` 不能省：样式名里的每个点都是一层**隐式继承**，
-      `Widget.Cainiao.Chip` 会去找不存在的 `Widget.Cainiao`，
-      AAPT 直接报 `resource style/Widget.Cainiao not found` 整包链接失败。
+      `Widget.PickupAssistant.Chip` 会去找不存在的 `Widget.PickupAssistant`，
+      AAPT 直接报 `resource style/Widget.PickupAssistant not found` 整包链接失败。
     -->
-    <style name="Widget.Cainiao.Chip" parent="">
+    <style name="Widget.PickupAssistant.Chip" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_chip_off</item>
@@ -61,7 +61,7 @@
         <item name="android:textSize">13sp</item>
     </style>
 
-    <style name="Widget.Cainiao.Card" parent="Widget.Material3.CardView.Elevated">
+    <style name="Widget.PickupAssistant.Card" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">0dp</item>
         <item name="cardBackgroundColor">@color/surface</item>

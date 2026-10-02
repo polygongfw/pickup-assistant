@@ -12,11 +12,11 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "com.coldbrew.cainiao"
+    namespace = "com.coldbrew.pickupassistant"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.coldbrew.cainiao"
+        applicationId = "com.coldbrew.pickupassistant"
         minSdk = 26
         targetSdk = 34
         versionCode = 10

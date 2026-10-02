@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="待取件"
-                android:textAppearance="@style/TextAppearance.Cainiao.Title" />
+                android:textAppearance="@style/TextAppearance.PickupAssistant.Title" />
 
             <TextView
                 android:id="@+id/tvDate"
@@ -39,7 +39,7 @@
             <!-- 概览卡 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHeader"
-                style="@style/Widget.Cainiao.Card"
+                style="@style/Widget.PickupAssistant.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp">
@@ -224,24 +224,24 @@
 
                     <TextView
                         android:id="@+id/chipAll"
-                        style="@style/Widget.Cainiao.Chip"
+                        style="@style/Widget.PickupAssistant.Chip"
                         tools:text="全部 50" />
 
                     <TextView
                         android:id="@+id/chipArrival"
-                        style="@style/Widget.Cainiao.Chip"
+                        style="@style/Widget.PickupAssistant.Chip"
                         android:layout_marginStart="8dp"
                         tools:text="到站 3" />
 
                     <TextView
                         android:id="@+id/chipTransit"
-                        style="@style/Widget.Cainiao.Chip"
+                        style="@style/Widget.PickupAssistant.Chip"
                         android:layout_marginStart="8dp"
                         tools:text="运输中 5" />
 
                     <TextView
                         android:id="@+id/chipDone"
-                        style="@style/Widget.Cainiao.Chip"
+                        style="@style/Widget.PickupAssistant.Chip"
                         android:layout_marginStart="8dp"
                         tools:text="已签收 42" />
                 </LinearLayout>

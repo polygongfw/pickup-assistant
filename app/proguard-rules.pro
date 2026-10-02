@@ -3,9 +3,9 @@
 
 # WorkManager 反射实例化 Worker
 -keep class * extends androidx.work.ListenableWorker { *; }
--keep class com.coldbrew.cainiao.work.** { *; }
+-keep class com.coldbrew.pickupassistant.work.** { *; }
 
 # ViewBinding 生成的类
--keep class com.coldbrew.cainiao.databinding.** { *; }
+-keep class com.coldbrew.pickupassistant.databinding.** { *; }
 
 -dontwarn org.jetbrains.annotations.**

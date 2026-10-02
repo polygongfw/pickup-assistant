@@ -20,11 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的"
-            android:textAppearance="@style/TextAppearance.Cainiao.Title" />
+            android:textAppearance="@style/TextAppearance.PickupAssistant.Title" />
 
         <!-- 账号卡：多账号列表 -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.Cainiao.Card"
+            style="@style/Widget.PickupAssistant.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -131,7 +131,7 @@
 
         <!-- 提醒 -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.Cainiao.Card"
+            style="@style/Widget.PickupAssistant.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp">
@@ -182,7 +182,7 @@
 
         <!-- 操作 -->
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.Cainiao.Card"
+            style="@style/Widget.PickupAssistant.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp">
@@ -326,7 +326,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="关于"
-            android:textAppearance="@style/TextAppearance.Cainiao.Section" />
+            android:textAppearance="@style/TextAppearance.PickupAssistant.Section" />
 
         <TextView
             android:id="@+id/tvAbout"

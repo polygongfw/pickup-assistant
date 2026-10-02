@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="查快递"
-            android:textAppearance="@style/TextAppearance.Cainiao.Title" />
+            android:textAppearance="@style/TextAppearance.PickupAssistant.Title" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardResult"
-            style="@style/Widget.Cainiao.Card"
+            style="@style/Widget.PickupAssistant.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
